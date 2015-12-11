@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the VIU Testimonial feature.
+ */
+
+include_once 'viu_testimonial.features.inc';
