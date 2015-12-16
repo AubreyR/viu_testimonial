@@ -5,3 +5,14 @@
  */
 
 include_once 'viu_testimonial.features.inc';
+
+/**
+ * Implements hook_views_api_alter().
+ *
+ * Views api is specified by features but we want to add the views-template directory to it.
+ */
+function viu_testimonial_views_api_alter(&$apis) {
+  if (!empty($apis['viu_testimonial']) && $apis['viu_testimonial']['api'] == '3.0') {
+    $apis['viu_testimonial']['template path'] = drupal_get_path('module', 'viu_testimonial') . '/templates';
+  }
+}
