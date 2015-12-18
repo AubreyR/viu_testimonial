@@ -47,3 +47,6 @@ features_exclude[dependencies][options] = options
 features_exclude[dependencies][strongarm] = strongarm
 features_exclude[dependencies][taxonomy] = taxonomy
 project path = profiles/viu/modules/viu
+
+; Custom changes
+scripts[] = javascripts/viu_testimonial.js
