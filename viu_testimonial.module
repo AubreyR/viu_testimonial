@@ -7,6 +7,53 @@
 include_once 'viu_testimonial.features.inc';
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Registers a custom form validation callback function.
+ */
+function viu_testimonial_form_testimonial_node_form_alter(&$form, &$form_state, $form_id) {
+  $form['#validate'][] = 'testimonial_node_form_validate';
+}
+
+/**
+ * Custom validation handler for testimonial node content form.
+ *
+ * @see hook_form_FORM_ID_alter()
+ */
+function testimonial_node_form_validate($form, &$form_state) {
+  // Only letters and spaces allowed in student names
+  if (!(preg_match('^[\p{L}\p{Z}]+$^', $form_state['values']['title']))){
+    form_set_error('title', t('You are not allowed to use symbols or numbers in the \'Name\' field'));
+  }
+  // Year Graduated and Year of Studies are mutually exclusive
+  if ($form_state['values']['field_viu_testimonial_year']['und'][0]['value'] &&
+      $form_state['values']['field_viu_testimonial_year_grad']['und'][0]['value']) {
+    form_set_error('field_viu_tesimonial_year', t('The student cannot have both a \'Year Graduated\' and a \'Year of Studies\''));
+  }
+  // Check that the Year Graduated is not greater than the current year
+  $current_year = date('Y', strtotime($form_state['values']['date']));
+  $post_year = date('Y', strtotime($form_state['values']['field_viu_testimonial_year_grad']['und'][0]['value']));
+  if ($current_year < $post_year) {
+    form_set_error('field_viu_testimonial_year_grad', t('\'Year Graduated\' cannot be in the future.'));
+  }
+  // Only letters and spaces and simple punctuation allowed in Program names
+  if (!(preg_match('^[\p{L}\p{Z},.]+$^', $form_state['values']['field_viu_testimonial_program']['und'][0]['value']))){
+    form_set_error('field_viu_testimonial_program', t('You are not allowed to use symbols or numbers, except periods and spaces, in the \'Name\' field'));
+  }
+}
+ * Implements hook_node_view().
+ *
+ * Redirect individual node view to the testimonial list page
+ *
+ * @todo format URL properly once Darryl finishes implementation of his new URL scheme.
+ */
+function viu_testimonial_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'testimonial' && $view_mode == 'full' && arg(0) == 'node') {
+    //dpm($node);
+    
+    //drupal_goto('testimonials/');
+  }
+}
  * Implements hook_views_api_alter().
  *
  * Views api is specified by features but we want to add the views-template directory to it.

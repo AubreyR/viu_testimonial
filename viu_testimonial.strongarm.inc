@@ -56,6 +56,7 @@ function viu_testimonial_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_testimonial'] = $strongarm;
 
@@ -63,7 +64,7 @@ function viu_testimonial_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_testimonial';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['node_preview_testimonial'] = $strongarm;
 
   $strongarm = new stdClass();

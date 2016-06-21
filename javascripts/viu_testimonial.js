@@ -1,6 +1,8 @@
 /**
  * @file
  * Custom scripts for viu_testimonial module.
+ *
+ * @todo Shrink when testimonial shrinks, or limit the size of the testimonial
  */
 
 // Ensure the testimonial parent div is the size of the largest testimonial

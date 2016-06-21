@@ -10,7 +10,7 @@
 function viu_testimonial_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-testimonial-body'
+  // Exported field_instance: 'node-testimonial-body'.
   $field_instances['node-testimonial-body'] = array(
     'bundle' => 'testimonial',
     'default_value' => NULL,
@@ -69,7 +69,7 @@ function viu_testimonial_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-testimonial-field_featured_categories'
+  // Exported field_instance: 'node-testimonial-field_featured_categories'.
   $field_instances['node-testimonial-field_featured_categories'] = array(
     'bundle' => 'testimonial',
     'default_value' => NULL,
@@ -118,11 +118,11 @@ function viu_testimonial_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-testimonial-field_featured_image'
+  // Exported field_instance: 'node-testimonial-field_featured_image'.
   $field_instances['node-testimonial-field_featured_image'] = array(
     'bundle' => 'testimonial',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'A portrait of the person.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -166,14 +166,37 @@ function viu_testimonial_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_featured_image',
-    'label' => 'Primary Image',
+    'label' => 'Portrait',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => 'pages',
       'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => 'pages',
+        ),
+        'redirect' => 0,
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '300x200',
@@ -206,7 +229,7 @@ function viu_testimonial_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-testimonial-field_viu_testimonial_program'
+  // Exported field_instance: 'node-testimonial-field_viu_testimonial_program'.
   $field_instances['node-testimonial-field_viu_testimonial_program'] = array(
     'bundle' => 'testimonial',
     'default_value' => NULL,
@@ -259,12 +282,12 @@ function viu_testimonial_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-testimonial-field_viu_testimonial_year'
+  // Exported field_instance: 'node-testimonial-field_viu_testimonial_year'.
   $field_instances['node-testimonial-field_viu_testimonial_year'] = array(
     'bundle' => 'testimonial',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The current year of studies for the user',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -306,7 +329,8 @@ function viu_testimonial_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-testimonial-field_viu_testimonial_year_grad'
+  // Exported field_instance:
+  // 'node-testimonial-field_viu_testimonial_year_grad'.
   $field_instances['node-testimonial-field_viu_testimonial_year_grad'] = array(
     'bundle' => 'testimonial',
     'default_value' => array(),
@@ -373,13 +397,14 @@ function viu_testimonial_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-testimonial-oa_other_spaces_ref'
+  // Exported field_instance: 'node-testimonial-oa_other_spaces_ref'.
   $field_instances['node-testimonial-oa_other_spaces_ref'] = array(
     'bundle' => 'testimonial',
     'comment_alter' => 0,
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
-    'description' => 'Select a list of additional Spaces that this piece of content should be visible in. This <em>doesn\'t</em> affect access control - users in the other Spaces must have access to see this content in it\'s main Space for it to be visible to them at all.',
+    'description' => 'Select a list of additional Sites that this piece of content should be visible in. This <em>doesn\'t</em> affect access control - users in the other Spaces must have access to see this content in it\'s main Space for it to be visible to them at all.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -402,12 +427,14 @@ function viu_testimonial_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
     'field_name' => 'oa_other_spaces_ref',
-    'label' => 'Visible in other Spaces',
+    'label' => 'Visible on other Sites',
     'options_limit' => 0,
     'options_limit_empty_behaviour' => 0,
     'options_limit_fields' => array(
       'body' => 0,
+      'field_featured_image' => 0,
     ),
     'required' => 0,
     'settings' => array(
@@ -426,6 +453,7 @@ function viu_testimonial_field_default_field_instances() {
               'select2widgetajax' => array(
                 'match_operator' => 'CONTAINS',
                 'min_char' => 0,
+                'placeholder' => 'Search',
                 'view_mode' => 'teaser',
                 'width' => '100%',
               ),
@@ -433,6 +461,9 @@ function viu_testimonial_field_default_field_instances() {
             'widget_type' => 'select2widgetajax',
           ),
           'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
         ),
       ),
       'user_register_form' => FALSE,
@@ -458,12 +489,13 @@ function viu_testimonial_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-testimonial-oa_section_ref'
+  // Exported field_instance: 'node-testimonial-oa_section_ref'.
   $field_instances['node-testimonial-oa_section_ref'] = array(
     'bundle' => 'testimonial',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Leave this blank unless you want it to appear in a menu section/tab.  Not recommended usage.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -488,18 +520,23 @@ function viu_testimonial_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
     'field_name' => 'oa_section_ref',
     'label' => 'Section',
     'options_limit' => 1,
     'options_limit_empty_behaviour' => 1,
     'options_limit_fields' => array(
       'body' => 0,
-      'oa_section_ref' => 0,
       'og_group_ref' => 'og_group_ref',
     ),
     'options_optomize_entityreferences' => 1,
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -513,12 +550,13 @@ function viu_testimonial_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-testimonial-og_group_ref'
+  // Exported field_instance: 'node-testimonial-og_group_ref'.
   $field_instances['node-testimonial-og_group_ref'] = array(
     'bundle' => 'testimonial',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Defaults to the Site that you created this testimonial from.  If you wish this testimonial to appear in other sites, you can select them in the menu below.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -541,9 +579,16 @@ function viu_testimonial_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
     'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
+    'label' => 'Primary Site',
+    'options_limit' => 0,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(
+      'body' => 0,
+      'field_featured_image' => 0,
+    ),
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
@@ -553,6 +598,7 @@ function viu_testimonial_field_default_field_instances() {
               'select2widgetajax' => array(
                 'match_operator' => 'CONTAINS',
                 'min_char' => 1,
+                'placeholder' => 'Search',
                 'view_mode' => 'teaser',
                 'width' => '100%',
               ),
@@ -564,6 +610,7 @@ function viu_testimonial_field_default_field_instances() {
               'select2widgetajax' => array(
                 'match_operator' => 'CONTAINS',
                 'min_char' => 1,
+                'placeholder' => 'Search',
                 'view_mode' => 'teaser',
                 'width' => '100%',
               ),
@@ -571,6 +618,9 @@ function viu_testimonial_field_default_field_instances() {
             'widget_type' => 'select2widgetajax',
           ),
           'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
         ),
       ),
       'user_register_form' => FALSE,
@@ -588,6 +638,7 @@ function viu_testimonial_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
@@ -595,7 +646,7 @@ function viu_testimonial_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-testimonial-og_vocabulary'
+  // Exported field_instance: 'node-testimonial-og_vocabulary'.
   $field_instances['node-testimonial-og_vocabulary'] = array(
     'bundle' => 'testimonial',
     'default_value' => NULL,
@@ -644,17 +695,21 @@ function viu_testimonial_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A portrait of the person.');
   t('Categories');
+  t('Defaults to the Site that you created this testimonial from.  If you wish this testimonial to appear in other sites, you can select them in the menu below.');
   t('Enter the content of the document or wiki here.');
-  t('Groups audience');
+  t('Leave this blank unless you want it to appear in a menu section/tab.  Not recommended usage.');
   t('OG vocabulary');
-  t('Primary Image');
+  t('Portrait');
+  t('Primary Site');
   t('Program');
   t('Section');
-  t('Select a list of additional Spaces that this piece of content should be visible in. This <em>doesn\'t</em> affect access control - users in the other Spaces must have access to see this content in it\'s main Space for it to be visible to them at all.');
+  t('Select a list of additional Sites that this piece of content should be visible in. This <em>doesn\'t</em> affect access control - users in the other Spaces must have access to see this content in it\'s main Space for it to be visible to them at all.');
   t('Student\'s year of graduation - if they have gradutated');
   t('Testimonial');
-  t('Visible in other Spaces');
+  t('The current year of studies for the user');
+  t('Visible on other Sites');
   t('Year Graduated');
   t('Year of Studies');
 

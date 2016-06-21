@@ -10,7 +10,7 @@
 function viu_testimonial_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_viu_testimonial_program'
+  // Exported field_base: 'field_viu_testimonial_program'.
   $field_bases['field_viu_testimonial_program'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function viu_testimonial_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_viu_testimonial_year'
+  // Exported field_base: 'field_viu_testimonial_year'.
   $field_bases['field_viu_testimonial_year'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -53,6 +53,8 @@ function viu_testimonial_field_default_field_bases() {
         4 => '4th',
         5 => '5th',
         6 => '6th',
+        7 => '7th',
+        8 => '8th',
         'n' => 'nth',
       ),
       'allowed_values_function' => '',
@@ -61,7 +63,7 @@ function viu_testimonial_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_viu_testimonial_year_grad'
+  // Exported field_base: 'field_viu_testimonial_year_grad'.
   $field_bases['field_viu_testimonial_year_grad'] = array(
     'active' => 1,
     'cardinality' => 1,

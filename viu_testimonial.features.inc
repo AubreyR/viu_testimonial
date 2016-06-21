@@ -33,7 +33,7 @@ function viu_testimonial_node_info() {
       'base' => 'node_content',
       'description' => t('Testimonial from a student to display on your site.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Name'),
       'help' => '',
     ),
   );
