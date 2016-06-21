@@ -1,0 +1,8 @@
+table.views-table > tbody > tr.testimonial-row > td > img {
+    float: left;
+    padding-right: 1em;
+}
+
+table.views-table > thead > tr > th.testimonial-first-row {
+    width: 66%;
+}

@@ -23,7 +23,9 @@
  * @ingroup views_templates
  */
 ?>
-  <?php print $fields['body']->content; ?>
+  <p>
+  <?php print strip_tags($fields['body']->content, '<br>'); ?>
+  </p>
 
   <div class="testimonial-info">
 
