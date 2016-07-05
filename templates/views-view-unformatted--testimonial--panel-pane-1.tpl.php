@@ -13,7 +13,7 @@
 
 <div class="margin-bottom-40">
 
-  <div id="testimonials-1" class="carousel slide testimonials testimonials-v1">
+  <div id="testimonials-1" class="carousel slide testimonials testimonials-v1" data-ride="carousel">
     <div class="carousel-inner">
       <?php foreach ($rows as $id => $row): ?>
 

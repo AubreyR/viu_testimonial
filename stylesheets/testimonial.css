@@ -1,8 +1,12 @@
-table.views-table > tbody > tr.testimonial-row > td > img {
+table.views-table > tbody > tr.testimonial-row img {
     float: left;
     padding-right: 1em;
 }
 
 table.views-table > thead > tr > th.testimonial-first-row {
     width: 66%;
+}
+
+.pane-testimonial-panel-pane-2 .pane-title {
+    text-align: center;
 }

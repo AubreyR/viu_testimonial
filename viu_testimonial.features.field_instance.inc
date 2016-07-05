@@ -15,13 +15,15 @@ function viu_testimonial_field_default_field_instances() {
     'bundle' => 'testimonial',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the content of the document or wiki here.',
+    'description' => 'Enter the testimonial text itself here.  The text length may be trimmed to 600 characters in carousels and sidebars, unless you provide an explicit summary.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
         'weight' => 0,
       ),
       'featured' => array(
@@ -46,7 +48,7 @@ function viu_testimonial_field_default_field_instances() {
     'fences_wrapper' => 'no_wrapper',
     'field_name' => 'body',
     'label' => 'Testimonial',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'display_summary' => 1,
       'linkit' => array(
@@ -197,9 +199,9 @@ function viu_testimonial_field_default_field_instances() {
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '300x200',
+      'max_filesize' => '10 MB',
+      'max_resolution' => '800x600',
+      'min_resolution' => '200x200',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -287,7 +289,7 @@ function viu_testimonial_field_default_field_instances() {
     'bundle' => 'testimonial',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The current year of studies for the user',
+    'description' => 'The current year of studies for the person.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -347,7 +349,6 @@ function viu_testimonial_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 9,
@@ -698,7 +699,7 @@ function viu_testimonial_field_default_field_instances() {
   t('A portrait of the person.');
   t('Categories');
   t('Defaults to the Site that you created this testimonial from.  If you wish this testimonial to appear in other sites, you can select them in the menu below.');
-  t('Enter the content of the document or wiki here.');
+  t('Enter the testimonial text itself here.  The text length may be trimmed to 600 characters in carousels and sidebars, unless you provide an explicit summary.');
   t('Leave this blank unless you want it to appear in a menu section/tab.  Not recommended usage.');
   t('OG vocabulary');
   t('Portrait');
@@ -708,7 +709,7 @@ function viu_testimonial_field_default_field_instances() {
   t('Select a list of additional Sites that this piece of content should be visible in. This <em>doesn\'t</em> affect access control - users in the other Spaces must have access to see this content in it\'s main Space for it to be visible to them at all.');
   t('Student\'s year of graduation - if they have gradutated');
   t('Testimonial');
-  t('The current year of studies for the user');
+  t('The current year of studies for the person.');
   t('Visible on other Sites');
   t('Year Graduated');
   t('Year of Studies');
