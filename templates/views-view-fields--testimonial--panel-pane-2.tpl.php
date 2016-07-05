@@ -24,7 +24,7 @@
  */
 ?>
 <?php include_once (drupal_get_path('module', 'viu_testimonial') . '/php/helpers.php');
-  print replace_css($fields['field_featured_image']->content); ?>
+  print replace_css($fields['field_featured_image']->content, 'thumbnail', 'rounded-x img-bordered'); ?>
 
 <div class="testimonials-v3-title">
   <p>
