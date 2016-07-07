@@ -30,8 +30,13 @@
   </div>
 </div>
 <!-- End Testimonials v3 -->
-<?php libraries_load('owl-carousel')?>
-<?php drupal_add_js(drupal_get_path('module', 'viu_testimonial') . '/javascripts/owl-carousel.js',
-  (array('type' => 'file', 'scope' => 'footer', 'weight' => 10))); ?>
-<?php drupal_add_js('jQuery(document).ready(function() {OwlCarousel.initOwlCarousel();});',
-  (array('type' => 'inline', 'scope' => 'footer', 'weight' => 20))); ?>
+<?php
+  if (($library = libraries_load('owl-carousel', 'unify')) && !empty($library['loaded'])) {
+    drupal_add_js(drupal_get_path('module', 'viu_testimonial') . '/javascripts/owl-carousel.js',
+      (array('type' => 'file', 'scope' => 'footer', 'weight' => 10)));
+    drupal_add_js('jQuery(document).ready(function() {OwlCarousel.initOwlCarousel();});',
+      (array('type' => 'inline', 'scope' => 'footer', 'weight' => 20)));
+  }
+  else {
+    drupal_set_message($library['error message'] , 'error', FALSE);
+  } ?>
