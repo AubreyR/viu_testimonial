@@ -18,6 +18,7 @@ function viu_testimonial_disable() {
 function viu_testimonial_enable() {
   //Auto enable feature reversion
   viu_testimonial_update_7100();
+  cache_clear_all('*', 'cache', TRUE);
 }
 
 /**
