@@ -23,8 +23,6 @@ function viu_testimonial_enable() {
 
 /**
  * Revert the VIU Testimonials Module on update.
- *
- * @todo This needs to be tested against a live site.
  */
 function viu_testimonial_update_7100() {
   features_revert_module('viu_testimonial');
