@@ -31,7 +31,7 @@
 </div>
 <!-- End Testimonials v3 -->
 <?php
-  if (($library = libraries_load('owl-carousel', 'unify')) && !empty($library['loaded'])) {
+  if (($library = libraries_load('owl-carousel')) && !empty($library['loaded'])) {
     drupal_add_js(drupal_get_path('module', 'viu_testimonial') . '/javascripts/owl-carousel.js',
       (array('type' => 'file', 'scope' => 'footer', 'weight' => 10)));
     drupal_add_js('jQuery(document).ready(function() {OwlCarousel.initOwlCarousel();});',
