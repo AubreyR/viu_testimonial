@@ -23,7 +23,6 @@ function viu_testimonial_views_api_alter(&$apis) {
  * Redirect individual node view to the testimonial list page
  *
  * @todo format URL properly once Darryl finishes implementation of his new URL scheme.
- * @todo check for administrator permissions to bypass this functionality for site editors and admins
  */
 function viu_testimonial_node_view($node, $view_mode, $langcode) {
   if ($node->type == 'testimonial' && $view_mode == 'full' && arg(0) == 'node') {
