@@ -16,14 +16,6 @@ function viu_testimonial_disable() {
  * Implements hook_enable().
  */
 function viu_testimonial_enable() {
-  //Auto enable feature reversion
-  viu_testimonial_update_7100();
-  cache_clear_all('*', 'cache', TRUE);
-}
-
-/**
- * Revert the VIU Testimonials Module on update.
- */
-function viu_testimonial_update_7100() {
   features_revert_module('viu_testimonial');
+  cache_clear_all('*', 'cache', TRUE);
 }
