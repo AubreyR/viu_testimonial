@@ -25,7 +25,7 @@
 ?>
 <?php include_once (drupal_get_path('module', 'viu_testimonial') . '/php/helpers.php');
   // @todo This should probably be done in pre-render stage instead of modifying rendered code
-  print replace_css($fields['field_featured_image']->content, 'thumbnail', 'rounded-x img-bordered'); ?>
+  print replace_css($fields['field_featured_image']->content, 'testimonials-thumb', 'rounded-x img-bordered'); ?>
 
 <div class="testimonials-v3-title">
   <p>

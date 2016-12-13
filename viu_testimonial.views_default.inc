@@ -164,7 +164,7 @@ function viu_testimonial_views_default_views() {
   $handler->display->display_options['fields']['field_featured_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'testimonials_thumb',
     'image_link' => '',
   );
   /* Field: Content: Body */
@@ -384,7 +384,7 @@ function viu_testimonial_views_default_views() {
   $handler->display->display_options['fields']['field_featured_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'testimonials_thumb',
     'image_link' => '',
   );
   /* Field: Content: Body */
@@ -455,7 +455,7 @@ function viu_testimonial_views_default_views() {
   $handler->display->display_options['fields']['field_featured_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'testimonials_thumb',
     'image_link' => '',
   );
   /* Field: Content: Body */
@@ -531,7 +531,7 @@ function viu_testimonial_views_default_views() {
   $handler->display->display_options['fields']['field_featured_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'testimonials_thumb',
     'image_link' => '',
   );
   /* Field: Content: Body */

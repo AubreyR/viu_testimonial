@@ -201,7 +201,7 @@ function viu_testimonial_field_default_field_instances() {
       'filefield_paths_enabled' => 1,
       'max_filesize' => '10 MB',
       'max_resolution' => '800x600',
-      'min_resolution' => '200x200',
+      'min_resolution' => '150x150',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
