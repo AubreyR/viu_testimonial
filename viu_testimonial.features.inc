@@ -24,6 +24,30 @@ function viu_testimonial_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function viu_testimonial_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: testimonials_thumb.
+  $styles['testimonials_thumb'] = array(
+    'label' => 'Testimonials Thumb',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 150,
+          'height' => 150,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function viu_testimonial_node_info() {
