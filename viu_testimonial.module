@@ -60,7 +60,7 @@ function _testimonial_node_form_validate($form, &$form_state) {
     form_set_error('field_viu_testimonial_year', t('The student cannot have both a \'Year Graduated\' and a \'Year of Studies\''));
   }
   // Check that the Year Graduated is not greater than the current year
-  $current_year = date('Y', strtotime($form_state['values']['date']));
+  $current_year = date('Y');
   $post_year = date('Y', strtotime($form_state['values']['field_viu_testimonial_year_grad']['und'][0]['value']));
   if ($current_year < $post_year) {
     form_set_error('field_viu_testimonial_year_grad', t('\'Year Graduated\' cannot be in the future.'));
