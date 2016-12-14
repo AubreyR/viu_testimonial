@@ -10,3 +10,13 @@ table.views-table > thead > tr > th.testimonial-first-row {
 .pane-testimonial-panel-pane-2 .pane-title {
     text-align: center;
 }
+
+/* Add bit of padding below module */
+.view-testimonial{
+    margin-bottom: 1em;
+}
+
+/* Remove top margin on view title */
+.pane-testimonial-panel-pane-6 h3{
+    margin-top:0;
+}
